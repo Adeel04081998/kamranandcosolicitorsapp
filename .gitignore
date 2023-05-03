@@ -3,6 +3,21 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Reactnative Expo
+info/
+.expo/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# Temporary files created by Metro to check the health of the file watcher
+.metro-health-check*
+
 # Node artifact files
 node_modules/
 dist/
