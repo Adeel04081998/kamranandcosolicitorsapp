@@ -4,8 +4,8 @@
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
 # Reactnative Expo
-#info/
-#.expo/
+info/
+.expo/
 npm-debug.*
 *.jks
 *.p8
@@ -19,7 +19,7 @@ web-build/
 .metro-health-check*
 
 # Node artifact files
-#node_modules/
+node_modules/
 dist/
 
 # Compiled Java class files
