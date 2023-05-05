@@ -1,13 +1,10 @@
-import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import React from "react";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
-import Styles from "../Components/Styles";
+import { SafeAreaView, View, StyleSheet } from "react-native";
+import CustomStyles from "../../components/CustomStyles";
 import { useNavigation } from "@react-navigation/native";
-import { Calendar, Agenda } from "react-native-calendars";
-import Colors from "../Utils/Colors";
+import { Calendar } from "react-native-calendars";
+import Colors from "../../utils/Colors";
 
-export default function AddBooking(props) {
+export default function AddBookingScreen(props) {
   const navigation = useNavigation();
 
   const redDot = {
@@ -17,9 +14,8 @@ export default function AddBooking(props) {
   };
 
   return (
-    <SafeAreaView style={Styles.safeAreaView}>
-      <Header title={props.route.params.title} />
-      <View style={Styles.contentAreaContainer}>
+    <SafeAreaView style={CustomStyles.safeAreaView}>
+      <View style={CustomStyles.contentAreaContainer}>
         <Calendar
           onDayPress={(day) => {
             console.log("selected day", day);
@@ -71,25 +67,7 @@ export default function AddBooking(props) {
             },
           }}
         />
-
-        <Agenda
-          selected="2022-12-01"
-          items={{
-            "2022-12-01": [
-              { name: "Cycling" },
-              { name: "Walking" },
-              { name: "Running" },
-            ],
-            "2022-12-02": [{ name: "Writing" }],
-          }}
-          renderItem={(item, isFirst) => (
-            <TouchableOpacity style={styles.item}>
-              <Text style={styles.itemText}>{item.name}</Text>
-            </TouchableOpacity>
-          )}
-        />
       </View>
-      <Footer />
     </SafeAreaView>
   );
 }

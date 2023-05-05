@@ -1,11 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import Routes from "./src/Routes";
+import { NavigationContainer } from "@react-navigation/native";
+
+import AuthStack from "./src/navigation/AuthStack";
+import AppStack from "./src/navigation/AppStack";
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <Routes />
+      <NavigationContainer>
+        {/* <AuthStack /> */}
+        <AppStack />
+      </NavigationContainer>
     </>
   );
 }

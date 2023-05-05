@@ -1,7 +1,7 @@
-import { StyleSheet } from "react-native";
-import Colors from "../Utils/Colors";
+import { StyleSheet } from "react-native"
+import Colors from "../utils/Colors"
 
-export default Styles = StyleSheet.create({
+export default CustomStyles = StyleSheet.create({
   safeAreaView: {
     backgroundColor: Colors.GRAY,
     flex: 1,
@@ -26,4 +26,4 @@ export default Styles = StyleSheet.create({
     flex: 6,
     backgroundColor: Colors.LIGHTERGRAY
   },
-});
+})

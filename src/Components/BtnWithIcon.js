@@ -1,6 +1,5 @@
-import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
-import React from "react";
-import Colors from "../Utils/Colors";
+import { TouchableOpacity, Text, StyleSheet, View } from "react-native"
+import Colors from "../utils/Colors"
 
 export default function BtnWithIcon({ btnIcon, btnTitle, btnPress }) {
   return (
@@ -12,7 +11,7 @@ export default function BtnWithIcon({ btnIcon, btnTitle, btnPress }) {
         <Text style={styles.btnPrimaryText}>{btnTitle}</Text>
       </View>
     </TouchableOpacity>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -32,4 +31,4 @@ const styles = StyleSheet.create({
     textAlign: "left",
     paddingLeft: 20,
   },
-});
+})

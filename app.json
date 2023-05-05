@@ -4,11 +4,11 @@
     "slug": "KamranAndCoSolicitorsApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icon.png",
     "backgroundColor": "#000000",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/splash-1.0.png",
+      "image": "./src/assets/splash-1.0.png",
       "resizeMode": "cover",
       "backgroundColor": "#B7A27C"
     },
@@ -20,12 +20,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/assets/favicon.png"
     }
   }
 }

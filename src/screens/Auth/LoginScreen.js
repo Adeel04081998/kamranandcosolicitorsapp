@@ -1,17 +1,16 @@
 import { View, Text, SafeAreaView, TextInput, Image } from "react-native";
-import React from "react";
 import { StyleSheet } from "react-native";
-import Footer from "../Components/Footer";
-import Styles from "../Components/Styles";
-import BtnPrimary from "../Components/BtnPrimary";
-import Colors from "../Utils/Colors";
+import Footer from "../../components/FooterInc";
+import CustomStyles from "../../components/CustomStyles";
+import BtnPrimary from "../../components/BtnPrimary";
+import Colors from "../../utils/Colors";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Login(props) {
+export default function LoginScreen(props) {
   const navigation = useNavigation();
 
   return (
-    <SafeAreaView style={Styles.safeAreaView}>
+    <SafeAreaView style={CustomStyles.safeAreaView}>
       <View style={styles.logoContainer}>
         <Image
           source={require("../../assets/logo.png")}
@@ -34,7 +33,7 @@ export default function Login(props) {
         />
         <BtnPrimary
           btnTitle="Submit"
-          btnPress={() => navigation.replace("Home")}
+          btnPress={() => navigation.navigate("Home")}
         />
       </View>
       <Footer />
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 2,
     flexDirection: "row",
     justifyContent: "center",
-    marginTop: 2
+    marginTop: 2,
   },
   logoImage: {
     width: "67%",

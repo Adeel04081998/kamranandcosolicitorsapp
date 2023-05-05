@@ -1,24 +1,23 @@
 import { Text, View, Image, Pressable } from "react-native";
-import React from "react";
-import Styles from "./Styles";
-import Colors from "../Utils/Colors";
+import CustomStyles from "./CustomStyles";
+import Colors from "../utils/Colors";
 import BtnSecondary from "./BtnSecondary";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function Header({ title }) {
+export default function HeaderInc({ title }) {
   const navigation = useNavigation();
 
   return (
     <>
-      <View style={Styles.headerLogoContainer}>
+      <View style={CustomStyles.headerLogoContainer}>
         <Pressable
           onPress={() => navigation.replace("Home")}
-          style={Styles.headerLogoImagePressable}
+          style={CustomStyles.headerLogoImagePressable}
         >
           <Image
-            source={require("../../assets/logo.png")}
-            style={Styles.headerLogoImage}
+            source={require("../assets/logo.png")}
+            style={CustomStyles.headerLogoImage}
           />
         </Pressable>
         <BtnSecondary
@@ -33,16 +32,20 @@ export default function Header({ title }) {
           flexDirection: "row",
           alignItems: "center",
           paddingLeft: 10,
-          paddingBottom: 10,
+          paddingVertical: 10,
+          backgroundColor: Colors.DARKGOLD
         }}
       >
-        <AntDesign
-          name="rightsquare"
-          size={18}
-          color={Colors.LIGHTGRAY}
-          style={{ marginRight: 5, marginTop: 1 }}
-        />
-        <Text style={{ fontSize: 18, color: Colors.LIGHTERGRAY }}>{title}</Text>
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: "bold",
+            color: Colors.WHITE,
+            textTransform: "uppercase",
+          }}
+        >
+          {title}
+        </Text>
       </View>
     </>
   );

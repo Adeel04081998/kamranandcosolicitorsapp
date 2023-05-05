@@ -1,6 +1,5 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import React from "react";
-import Colors from "../Utils/Colors";
+import { TouchableOpacity, Text, StyleSheet } from "react-native"
+import Colors from "../utils/Colors"
 
 export default function BtnSecondary({btnTitle, btnPress}) {
   return (
@@ -25,4 +24,4 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     paddingHorizontal: "3%",
   },
-});
+})
