@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { SafeAreaView, View, Image, StyleSheet } from "react-native";
 import CustomStyles from "../../components/CustomStyles";
 import BtnWithIcon from "../../components/BtnWithIcon";
@@ -9,9 +10,12 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Octicons } from "@expo/vector-icons";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function HomeScreen(props) {
   const navigation = useNavigation();
+
+  const {logout} = useContext(AuthContext);
 
   return (
     <SafeAreaView style={CustomStyles.safeAreaView}>
@@ -95,9 +99,7 @@ export default function HomeScreen(props) {
             <MaterialIcons name="logout" size={27} color={Colors.GRAY} />
           }
           btnTitle="User Logout"
-          btnPress={() => {
-            navigation.navigate("LoginScreen");
-          }}
+          btnPress={() => {logout()}}
         />
       </View>
     </SafeAreaView>

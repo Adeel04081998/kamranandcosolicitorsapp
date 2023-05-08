@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { View, Text, SafeAreaView, TextInput, Image } from "react-native";
 import { StyleSheet } from "react-native";
 import Footer from "../../components/FooterInc";
@@ -5,9 +6,12 @@ import CustomStyles from "../../components/CustomStyles";
 import BtnPrimary from "../../components/BtnPrimary";
 import Colors from "../../utils/Colors";
 import { useNavigation } from "@react-navigation/native";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function LoginScreen(props) {
   const navigation = useNavigation();
+
+  const { login } = useContext(AuthContext);
 
   return (
     <SafeAreaView style={CustomStyles.safeAreaView}>
@@ -33,7 +37,7 @@ export default function LoginScreen(props) {
         />
         <BtnPrimary
           btnTitle="Submit"
-          btnPress={() => navigation.navigate("Home")}
+          btnPress={() => {login()}}
         />
       </View>
       <Footer />
