@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { getFocusedRouteNameFromRoute } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 import HomeScreen from "../screens/Home/HomeScreen";
 import AddBookingScreen from "../screens/Home/AddBookingScreen";
@@ -11,6 +12,10 @@ import KeyDatesScreen from "../screens/Home/KeyDatesScreen";
 import HearingDatesScreen from "../screens/Home/HearingDatesScreen";
 
 import WhiteboardScreen from "../screens/Whiteboard/WhiteboardScreen";
+
+import TasksScreen from "../screens/Tasks/TasksScreen";
+import AddTaskScreen from "../screens/Tasks/AddTaskScreen";
+
 import NotificationsScreen from "../screens/Notification/NotificationsScreen";
 import SettingsScreen from "../screens/Setting/SettingsScreen";
 import Colors from "./../utils/Colors";
@@ -93,11 +98,43 @@ function HomeStack() {
   );
 }
 
+function TasksStack() {
+  const navigation = useNavigation();
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="TasksScreen"
+        component={TasksScreen}
+        options={{
+          headerTintColor: Colors.WHITE,
+          headerTitle: "Tasks List",
+          headerBackTitleStyle: { color: Colors.GOLD },
+          headerStyle: { backgroundColor: Colors.GRAY },
+          headerRight: () => (
+            <Ionicons name="add-circle" size={32} color={Colors.WHITE} onPress={() => navigation.navigate('AddTaskScreen')} />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="AddTaskScreen"
+        component={AddTaskScreen}
+        options={{
+          headerTintColor: Colors.WHITE,
+          headerTitle: "Add New Task",
+          headerBackTitleStyle: { color: Colors.GOLD },
+          headerStyle: { backgroundColor: Colors.GRAY },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 export default function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
+        // headerShown: false,
         tabBarShowLabel: true,
         tabBarActiveTintColor: Colors.WHITE,
         tabBarInactiveTintColor: Colors.GRAY,
@@ -118,6 +155,7 @@ export default function TabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <FontAwesome5 name="home" size={size} color={color} />
           ),
+          headerShown: false
         })}
       />
       <Tab.Screen
@@ -127,6 +165,20 @@ export default function TabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Entypo name="blackboard" size={size} color={color} />
           ),
+          headerTintColor: Colors.WHITE,
+          headerTitle: "Whiteboard",
+          headerBackTitleStyle: { color: Colors.GOLD },
+          headerStyle: { backgroundColor: Colors.GRAY },
+        }}
+      />
+      <Tab.Screen
+        name="Tasks"
+        component={TasksStack}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="document-text" size={size} color={color} />
+          ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -138,6 +190,10 @@ export default function TabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="notifications" size={size} color={color} />
           ),
+          headerTintColor: Colors.WHITE,
+          headerTitle: "Notifications",
+          headerBackTitleStyle: { color: Colors.GOLD },
+          headerStyle: { backgroundColor: Colors.GRAY },
         }}
       />
       <Tab.Screen
@@ -147,6 +203,10 @@ export default function TabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="settings" size={size} color={color} />
           ),
+          headerTintColor: Colors.WHITE,
+          headerTitle: "Settings",
+          headerBackTitleStyle: { color: Colors.GOLD },
+          headerStyle: { backgroundColor: Colors.GRAY },
         }}
       />
     </Tab.Navigator>

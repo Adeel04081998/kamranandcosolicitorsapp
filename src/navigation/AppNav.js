@@ -1,6 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import { View, ActivityIndicator } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
+import Colors from "../utils/Colors";
+import Spinner from "react-native-loading-spinner-overlay"
 
 import AuthStack from "./AuthStack";
 import AppStack from "./AppStack";
@@ -13,8 +15,9 @@ export default function AppNav() {
   if (isLoading) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <ActivityIndicator size={"large"}></ActivityIndicator>
+        <ActivityIndicator size="large" color={Colors.GOLD} />
       </View>
+      // <Spinner size="large" color={Colors.GRAY} visible={true} />
     );
   }
 

@@ -7,6 +7,11 @@ export default CustomStyles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
+  mainButtonsContainer: {
+    flex: 4,
+    flexDirection: "column",
+    alignItems: "center",
+  },
   headerLogoContainer: {
     flex: 1,
     flexDirection: "row",
@@ -24,6 +29,13 @@ export default CustomStyles = StyleSheet.create({
   },
   contentAreaContainer: {
     flex: 6,
-    backgroundColor: Colors.LIGHTERGRAY
+    // alignItems: "center",
+    backgroundColor: Colors.LIGHTERGRAY,
+    paddingVertical: '2%',
+  },
+  errorText: {
+    color: Colors.PINK,
+    fontSize: 20,
+    paddingBottom: 10,
   },
 })

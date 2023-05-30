@@ -8,7 +8,9 @@ export default function NotificationsScreen(props) {
   return (
     <SafeAreaView style={CustomStyles.safeAreaView}>
       <View style={CustomStyles.contentAreaContainer}>
-        <Text>Notifications</Text>
+        <View style={{ alignItems: "center" }}>
+          <Text>Notifications</Text>
+        </View>
       </View>
     </SafeAreaView>
   );

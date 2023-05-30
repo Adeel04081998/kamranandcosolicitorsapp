@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { SafeAreaView, View, Image, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, Image, StyleSheet } from "react-native";
 import CustomStyles from "../../components/CustomStyles";
 import BtnWithIcon from "../../components/BtnWithIcon";
 import Colors from "../../utils/Colors";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
@@ -15,8 +14,6 @@ import { AuthContext } from "../../context/AuthContext";
 export default function HomeScreen(props) {
   const navigation = useNavigation();
 
-  const {logout} = useContext(AuthContext);
-
   return (
     <SafeAreaView style={CustomStyles.safeAreaView}>
       <View style={styles.topLogoContainer}>
@@ -25,7 +22,10 @@ export default function HomeScreen(props) {
           style={styles.topLogoImage}
         />
       </View>
-      <View style={styles.mainButtonsContainer}>
+      <View style={{alignItems:'center', marginBottom:10}}>
+        <Text style={{color:Colors.GOLD, fontSize:18}}>Welcome, Kamran Ejaz</Text>
+      </View>
+      <View style={CustomStyles.mainButtonsContainer}>
         <BtnWithIcon
           btnIcon={<Entypo name="add-to-list" size={27} color={Colors.GRAY} />}
           btnTitle="Add Booking"
@@ -94,13 +94,6 @@ export default function HomeScreen(props) {
             });
           }}
         />
-        <BtnWithIcon
-          btnIcon={
-            <MaterialIcons name="logout" size={27} color={Colors.GRAY} />
-          }
-          btnTitle="User Logout"
-          btnPress={() => {logout()}}
-        />
       </View>
     </SafeAreaView>
   );
@@ -116,10 +109,5 @@ const styles = StyleSheet.create({
   topLogoImage: {
     width: "67%",
     resizeMode: "contain",
-  },
-  mainButtonsContainer: {
-    flex: 4,
-    flexDirection: "column",
-    alignItems: "center",
   },
 });

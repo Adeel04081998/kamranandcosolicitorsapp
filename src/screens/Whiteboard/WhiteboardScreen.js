@@ -8,7 +8,9 @@ export default function WhiteboardScreen(props) {
   return (
     <SafeAreaView style={CustomStyles.safeAreaView}>
       <View style={CustomStyles.contentAreaContainer}>
-        <Text>Whiteboard</Text>
+        <View style={{ alignItems: "center" }}>
+          <Text>Whiteboard</Text>
+        </View>
       </View>
     </SafeAreaView>
   );

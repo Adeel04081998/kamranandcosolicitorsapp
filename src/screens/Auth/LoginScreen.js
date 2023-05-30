@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { View, Text, SafeAreaView, TextInput, Image } from "react-native";
 import { StyleSheet } from "react-native";
 import Footer from "../../components/FooterInc";
@@ -11,7 +11,10 @@ import { AuthContext } from "../../context/AuthContext";
 export default function LoginScreen(props) {
   const navigation = useNavigation();
 
-  const { login } = useContext(AuthContext);
+  const [emailAddress, setEmailAddress] = useState(null);
+  const [userPassword, setUserPassword] = useState(null);
+
+  const { login, loginErrorText } = useContext(AuthContext);
 
   return (
     <SafeAreaView style={CustomStyles.safeAreaView}>
@@ -22,22 +25,35 @@ export default function LoginScreen(props) {
         />
       </View>
       <View style={styles.textInputContainer}>
+        {loginErrorText ? (
+          <Text style={CustomStyles.errorText}>{loginErrorText}</Text>
+        ) : (
+          null
+        )}
         <Text style={styles.headingWhite}>User Login</Text>
         <TextInput
           placeholder="Email Address"
           placeholderTextColor={Colors.LIGHTGRAY}
+          autoCapitalize="none"
           keyboardType={"email-address"}
           style={styles.textInput}
+          value={emailAddress}
+          onChangeText={(text) => setEmailAddress(text)}
         />
         <TextInput
           placeholder="Password"
           placeholderTextColor={Colors.LIGHTGRAY}
+          autoCapitalize="none"
           style={styles.textInput}
           secureTextEntry={true}
+          value={userPassword}
+          onChangeText={(text) => setUserPassword(text)}
         />
         <BtnPrimary
           btnTitle="Submit"
-          btnPress={() => {login()}}
+          btnPress={() => {
+            login(emailAddress, userPassword);
+          }}
         />
       </View>
       <Footer />
