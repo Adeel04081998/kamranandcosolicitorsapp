@@ -1,5 +1,5 @@
 import { SafeAreaView, View, Text, Image } from "react-native";
-import CustomStyles from "../../components/CustomStyles";
+import CustomStyles from "../../Components/CustomStyles";
 import { useNavigation } from "@react-navigation/native";
 
 export default function AmendTimeSlotsScreen(props) {

@@ -1,5 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import Colors from "../utils/Colors";
+import Colors from "../Utils/Colors"
+;
 
 export default function BtnPrimary({ btnTitle, btnPress }) {
   return (

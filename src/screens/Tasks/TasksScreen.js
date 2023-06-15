@@ -7,9 +7,9 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import CustomStyles from "../../components/CustomStyles";
+import CustomStyles from "../../Components/CustomStyles";
 import { useNavigation } from "@react-navigation/native";
-import Colors from "../../utils/Colors";
+import Colors from "../../Utils/Colors";
 import { useState } from "react";
 import { MaterialIcons } from '@expo/vector-icons';
 

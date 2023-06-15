@@ -1,6 +1,7 @@
 import { Text, View, Image, Pressable } from "react-native";
 import CustomStyles from "./CustomStyles";
-import Colors from "../utils/Colors";
+import Colors from "../Utils/Colors"
+;
 import BtnSecondary from "./BtnSecondary";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";

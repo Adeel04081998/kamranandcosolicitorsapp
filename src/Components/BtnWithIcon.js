@@ -1,5 +1,6 @@
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native"
-import Colors from "../utils/Colors"
+import Colors from "../Utils/Colors"
+
 
 export default function BtnWithIcon({ btnIcon, btnTitle, btnPress }) {
   return (

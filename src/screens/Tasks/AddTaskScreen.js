@@ -8,9 +8,9 @@ import {
   Button,
   Alert,
 } from "react-native";
-import Colors from "../../utils/Colors";
+import Colors from "../../Utils/Colors";
 import { Dropdown } from "react-native-element-dropdown";
-import BtnPrimary from "../../components/BtnPrimary";
+import BtnPrimary from "../../Components/BtnPrimary";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Spinner from "react-native-loading-spinner-overlay";

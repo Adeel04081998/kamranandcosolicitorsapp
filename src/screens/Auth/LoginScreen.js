@@ -1,18 +1,19 @@
 import { useContext, useState } from "react";
 import { View, Text, SafeAreaView, TextInput, Image } from "react-native";
 import { StyleSheet } from "react-native";
-import Footer from "../../components/FooterInc";
-import CustomStyles from "../../components/CustomStyles";
-import BtnPrimary from "../../components/BtnPrimary";
-import Colors from "../../utils/Colors";
+import Footer from "../../Components/FooterInc";
+import CustomStyles from "../../Components/CustomStyles";
+import BtnPrimary from "../../Components/BtnPrimary";
+import Colors from "../../Utils//Colors";
 import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function LoginScreen(props) {
   const navigation = useNavigation();
-
-  const [emailAddress, setEmailAddress] = useState(null);
-  const [userPassword, setUserPassword] = useState(null);
+  // Email: kejaz@kamranandcosolicitors.com
+  // Pass: testing111
+  const [emailAddress, setEmailAddress] = useState("kejaz@kamranandcosolicitors.com");
+  const [userPassword, setUserPassword] = useState("testing111");
 
   const { login, loginErrorText } = useContext(AuthContext);
 

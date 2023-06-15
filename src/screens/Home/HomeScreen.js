@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { SafeAreaView, View, Text, Image, StyleSheet } from "react-native";
-import CustomStyles from "../../components/CustomStyles";
-import BtnWithIcon from "../../components/BtnWithIcon";
-import Colors from "../../utils/Colors";
+import CustomStyles from "../../Components/CustomStyles";
+import BtnWithIcon from "../../Components/BtnWithIcon";
+import Colors from "../../Utils/Colors";
 import { useNavigation } from "@react-navigation/native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";

@@ -18,7 +18,8 @@ import AddTaskScreen from "../screens/Tasks/AddTaskScreen";
 
 import NotificationsScreen from "../screens/Notification/NotificationsScreen";
 import SettingsScreen from "../screens/Setting/SettingsScreen";
-import Colors from "./../utils/Colors";
+import Colors from "../Utils/Colors"
+;
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";

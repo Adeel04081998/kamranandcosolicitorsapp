@@ -1,8 +1,8 @@
 import { SafeAreaView, View, StyleSheet } from "react-native";
-import CustomStyles from "../../components/CustomStyles";
+import CustomStyles from "../../Components/CustomStyles";
 import { useNavigation } from "@react-navigation/native";
 import { Calendar } from "react-native-calendars";
-import Colors from "../../utils/Colors";
+import Colors from "../../Utils/Colors";
 
 export default function AddBookingScreen(props) {
   const navigation = useNavigation();

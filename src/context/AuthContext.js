@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import { BASE_URL } from "../config";
-import CustomStyles from "../components/CustomStyles";
+import CustomStyles from "../Components/CustomStyles";
 
 export const AuthContext = createContext();
 
