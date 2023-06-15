@@ -63,3 +63,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+# node.js
+#
+node_modules/
